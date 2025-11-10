@@ -94,6 +94,13 @@ where
     result
 }
 
+pub fn add_all_numbers_sum<T>(vec: &[T]) -> T
+where
+    T: std::iter::Sum + Copy,
+{
+    vec.iter().copied().sum()
+}
+
 #[test]
 fn insertion_sort_test() {
     let mut vec = vec![1, 9, 2, 4, 3];
@@ -131,4 +138,10 @@ fn read_vec_in_txt_test_vertical() {
 fn read_vec_in_txt_test_horizontal() {
     let vec = read_numeric_vec_from_file_horizontal::<i32>("num_horizontal.txt", "	");
     println!("{:?}", vec);
+}
+
+#[test]
+fn add_all_numbers_test() {
+    let mut vec = vec![1.0, 9.2, 2.1, 4.5, 3.6];
+    println!("{:?}", add_all_numbers_sum::<f32>(&mut vec));
 }
