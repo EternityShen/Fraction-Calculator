@@ -76,7 +76,7 @@ where
 
 pub fn read_numeric_vec_from_file_horizontal<T>(
     filename: &str,
-    delimiter: char
+    delimiter: &str
 ) -> Result<Vec<T>, Box<dyn std::error::Error>>
 where
     T: FromStr,
@@ -129,6 +129,6 @@ fn read_vec_in_txt_test_vertical() {
 
 #[test]
 fn read_vec_in_txt_test_horizontal() {
-    let vec = read_numeric_vec_from_file_horizontal::<i32>("num_horizontal.txt", ' ');
+    let vec = read_numeric_vec_from_file_horizontal::<i32>("num_horizontal.txt", "	");
     println!("{:?}", vec);
 }

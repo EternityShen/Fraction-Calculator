@@ -9,7 +9,7 @@ fn main() {
     println!("删除第一和最后一个");
     println!("最终评均分{:?}", calculate_average(&vec));
     println!("————————————————————————————————————");
-    let mut vec = read_numeric_vec_from_file_horizontal::<i32>("num_horizontal.txt", ' ').unwrap();
+    let mut vec = read_numeric_vec_from_file_horizontal::<i32>("num_horizontal.txt", "	").unwrap();
     println!("数组读取完毕");
     insertion_sort(&mut vec);
     println!("插入排序完毕");
